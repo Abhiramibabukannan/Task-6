@@ -1,0 +1,161 @@
+all the countries from Asia continent /region using Filter method
+
+const countries = [
+  { name: "Afghanistan", continent: "Asia" },
+  { name: "Albania", continent: "Europe" },
+  { name: "Algeria", continent: "Africa" },
+  { name: "Andorra", continent: "Europe" },
+  { name: "Angola", continent: "Africa" },
+  { name: "Antigua and Barbuda", continent: "North America" },
+  { name: "Argentina", continent: "South America" },
+  { name: "Armenia", continent: "Asia" },
+  { name: "Australia", continent: "Oceania" },
+  { name: "Austria", continent: "Europe" },
+  { name: "Azerbaijan", continent: "Asia" },
+  // ... rest of the countries
+];
+
+
+
+const asianCountries = countries.filter(country => country.continent === "Asia");
+console.log(asianCountries);
+
+
+This will output an array of objects representing the countries from the Asia continent:
+
+
+[
+  { name: "Afghanistan", continent: "Asia" },
+  { name: "Armenia", continent: "Asia" },
+  { name: "Azerbaijan", continent: "Asia" },
+  // ... rest of the Asian countries
+]
+
+2.all the countries with a population of less than 2 lakhs using Filter method
+
+const countries = [
+  { name: "Afghanistan", population: 38300000 },
+  { name: "Albania", population: 3000000 },
+  { name: "Algeria", population: 43000000 },
+  { name: "Andorra", population: 72000 },
+  { name: "Angola", population: 32000000 },
+  { name: "Antigua and Barbuda", population: 97000 },
+  { name: "Argentina", population: 45000000 },
+  { name: "Armenia", population: 2100000 },
+  { name: "Australia", population: 25000000 },
+  { name: "Austria", population: 8900000 },
+  { name: "Azerbaijan", population: 10000000 },
+  // ... rest of the countries
+];
+
+
+const countriesWithLowPopulation = countries.filter(country => country.population < 200000);
+console.log(countriesWithLowPopulation);
+
+
+This will output an array of objects representing the countries with a population of less than 2 lakhs:
+
+
+[
+  { name: "Andorra", population: 72000 },
+  { name: "Antigua and Barbuda", population: 97000 },
+  // ... rest of the countries with low population
+]
+
+3. following details name, capital, flag, using forEach method
+
+const countries = [
+  {
+    name: "Afghanistan",
+    capital: "Kabul",
+    flag: "(link unavailable)"
+  },
+  {
+    name: "Albania",
+    capital: "Tirana",
+    flag: "(link unavailable)"
+  },
+  {
+    name: "Algeria",
+    capital: "Algiers",
+    flag: "(link unavailable)"
+  },
+  // ... rest of the countries
+];
+
+
+Now, you can use the forEach() method to print the name, capital, and flag of each country:
+
+
+countries.forEach(country => {
+  console.log(`Name: ${country.name}`);
+  console.log(`Capital: ${country.capital}`);
+  console.log(`Flag: ${country.flag}`);
+  console.log("------------------------");
+});
+
+
+This will output:
+
+
+Name: Afghanistan
+Capital: Kabul
+Flag: (link unavailable)
+------------------------
+Name: Albania
+Capital: Tirana
+Flag: (link unavailable)
+------------------------
+Name: Algeria
+Capital: Algiers
+Flag: (link unavailable)
+------------------------
+// ... rest of the countries
+
+
+4.Print the total population of countries using reduce method
+
+const countries = [
+  { name: "Afghanistan", population: 38300000 },
+  { name: "Albania", population: 3000000 },
+  { name: "Algeria", population: 43000000 },
+  { name: "Andorra", population: 72000 },
+  { name: "Angola", population: 32000000 },
+  // ... rest of the countries
+];
+
+
+Now, you can use the reduce() method to calculate the total population:
+
+
+const totalPopulation = countries.reduce((acc, country) => acc + country.population, 0);
+console.log(`Total population: ${totalPopulation}`);
+
+
+5.Print the country that uses US dollars as currency.
+
+const countries = [
+  { name: "Afghanistan", currency: "Afghan Afghani" },
+  { name: "Albania", currency: "Albanian Lek" },
+  { name: "Algeria", currency: "Algerian Dinar" },
+  { name: "Ecuador", currency: "United States Dollar" },
+  { name: "El Salvador", currency: "United States Dollar" },
+  { name: "Panama", currency: "United States Dollar" },
+  // ... rest of the countries
+];
+
+
+Now, you can use the filter() method to get the countries that use US dollars as currency:
+
+
+const countriesUsingUSD = countries.filter(country => country.currency === "United States Dollar");
+console.log("Countries using US dollars as currency:");
+countriesUsingUSD.forEach(country => console.log(country.name));
+
+ output:
+
+Countries using US dollars as currency:
+Ecuador
+El Salvador
+Panama
+
